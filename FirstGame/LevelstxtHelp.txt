@@ -1,0 +1,46 @@
+This file describes the format of the Levels.txt file which defines
+each level's duration and number/type of enemies
+
+The format is as follows:
+
+<duration>
+<enemy type>,<number of this enemy type>
+<a line of enemy attributes>
+Level (new level description begins after this line)
+
+Example:
+
+5000
+s,1
+30,30,2,100,200,2,1
+w,1
+1,2,1
+Level
+w,4
+1,2,2
+3,4,2
+2,3,2
+1,1,2
+
+The game created from this file will have 2 levels.
+
+The first level will last 5000 milliseconds, contain one
+Simple Enemy that is size 30x30, has a speed attribute of 2,
+spawns at position 100, 200, has the second Movement pattern
+(follow target), and the first Edge behavior pattern (bounce).
+This level will also contain one Sweeper Enemy which will have
+a speed of 1, spawn on the right side of the screen, and 
+have the bounce edge pattern.
+
+The second level will consist of 4 sweeper enemies that will begin
+on all four sies with a speed of 2 and move at different speeds
+from 1 to 4. 
+
+There are currently 2 movement patterns for enemies
+    1. Auto, move in a specified direction depending on the speed value
+    2. FollowTarget, takes a target as argument and moves towards it
+
+There are 3 edge patterns
+    1. Bounce, redirect off the wall
+    2. Deactivate, go through the wall and despawn
+    3. Otherside, appear on the opposite side of the screen

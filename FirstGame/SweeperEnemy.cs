@@ -58,7 +58,8 @@ namespace FirstGame
 
             switch (Edge)
             {
-                case 1: EdgeBehavior.Deactivate(this); break;
+                case 1: EdgeBehavior.Bounce(this); break;
+                case 2: EdgeBehavior.Deactivate(this); break;
             }
 
             EdgeBehavior.Deactivate(this);

@@ -13,14 +13,17 @@ namespace FirstGame
     class Player : Shape
     {
         private int Speed = 3;
+        private int Lives;
 
-        public Player(GraphicsDevice device, int width, int height, Color color, int speed)
+        public Player(GraphicsDevice device, int width, int height, Color color, int speed, int lives)
         {
             Width = width;
             Height = height;
             Color = color;
+            Lives = lives;
             Speed = SpeedX = SpeedY = speed;
             Body = CreateTexture(device, Width, Height, Color);
+
 
             posX = Game1.screenWidth / 2;
             posY = Game1.screenHeight / 2;
@@ -49,5 +52,6 @@ namespace FirstGame
             posX = Game1.screenWidth / 2;
             posY = Game1.screenHeight / 2;
         }
+
     }
 }
